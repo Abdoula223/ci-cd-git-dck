@@ -1,4 +1,4 @@
-name: CI/CD WordPress-Docker Hub by Dialla Abdoulaye
+name: CI/CD WordPress-Docker Hub by DiallaAbdoulaye
 
 on:
   push:
