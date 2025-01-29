@@ -17,12 +17,13 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}  
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}  
+          password: ${{ secrets.CI_CD_TOKEN }}  
 
+      - name: Build and Push WordPress Image
+        run: |
+          docker build -t abdoul223/ci-cd-git-dck:latest .  # Ajout du contexte `.`
+          docker push abdoul223/ci-cd-git-dck:latest
       - name: Build and Push WordPress Image
         run: |
           docker build -t abdoul223/ci-cd-git-dck:latest -f Dockerfile .
           docker push abdoul223/ci-cd-git-dck:latest
-
-      - name: Check Git Status
-        run: git status
