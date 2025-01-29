@@ -21,9 +21,8 @@ jobs:
 
       - name: Build and Push WordPress Image
         run: |
-          docker build -t abdoul223/ci-cd-git-dck:latest .  # Ajout du contexte `.`
-          docker push abdoul223/ci-cd-git-dck:latest
-      - name: Build and Push WordPress Image
-        run: |
           docker build -t abdoul223/ci-cd-git-dck:latest -f Dockerfile .
           docker push abdoul223/ci-cd-git-dck:latest
+
+      - name: Check Git Status
+        run: git status
